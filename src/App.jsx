@@ -4,16 +4,14 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 
-function App() {
+export default function App() {
   return (
-    <>
+    <div id="wrapper">
       <Header />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </>
+    </div>
   );
 }
-
-export default App;
