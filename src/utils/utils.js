@@ -21,3 +21,12 @@ export const getArticle = async (article_id) => {
     console.log(error);
   }
 };
+
+export const getComments = async (article_id) => {
+  try {
+    const { data } = await api.get(`/articles/${article_id}/comments`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

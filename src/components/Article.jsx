@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../utils/utils";
+import CommentsCard from "./CommentsCard";
 
-export default function IndividualReview() {
+export default function Article() {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
@@ -27,6 +28,9 @@ export default function IndividualReview() {
       <p>{article.body}</p>
       <p>created on {article.created_at}</p>
       <p>votes: {article.votes}</p>
+      <section>
+        <CommentsCard />
+      </section>
     </article>
   );
 }
