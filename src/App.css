@@ -5,11 +5,15 @@
   /* text-align: center; */
 }
 
-#wrapper {
+#wrapper,
+.article {
   display: flex;
   flex-direction: column;
-  width: 100vw;
   align-items: center;
+}
+
+#wrapper {
+  width: 100vw;
 }
 
 #nav {
@@ -18,6 +22,9 @@
   justify-content: space-evenly;
 }
 
+.article {
+  margin: 20px;
+}
 img {
   width: 50%;
   margin: 0 auto;
