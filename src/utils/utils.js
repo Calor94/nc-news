@@ -12,3 +12,12 @@ export const getArticles = async () => {
     console.log(error);
   }
 };
+
+export const getArticle = async (article_id) => {
+  try {
+    const { data } = await api.get(`/articles/${article_id}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

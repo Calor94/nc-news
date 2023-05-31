@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
+import Article from "./components/Article";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/articles/:article_id" element={<Article />} />
       </Routes>
     </div>
   );
