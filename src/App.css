@@ -2,7 +2,6 @@
   max-width: 1280px;
   margin: 0;
   padding: 0;
-  /* text-align: center; */
 }
 
 #wrapper,
@@ -26,19 +25,38 @@
   margin: 20px;
 }
 
-.upvote-icon {
+.vote-icon {
   font-size: 25px;
   cursor: pointer;
   border: none;
   background-color: inherit;
 }
 
-.upvote-icon:first-of-type {
+.vote-icon:hover {
+  transform: scale(1.25);
+}
+
+.vote-icon:focus {
+  transform: scale(1);
+}
+
+.vote-icon:first-of-type {
   margin: 0 10px;
 }
 
-.upvote-icon:last-of-type {
+.vote-icon:last-of-type {
   margin-left: 10px;
+}
+
+.upvote-icon {
+  color: rgb(239, 81, 81);
+}
+.downvote-icon {
+  color: rgb(81, 173, 239);
+}
+
+.error {
+  color: rgb(239, 81, 81);
 }
 
 img {

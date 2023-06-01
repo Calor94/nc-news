@@ -40,7 +40,7 @@ export default function Upvote({ article_id, votes }) {
         Votes:
         <button
           onClick={handleUpvote}
-          className="upvote-icon"
+          className="vote-icon upvote-icon"
           disabled={hasClickedUp}
         >
           ⬆
@@ -48,7 +48,7 @@ export default function Upvote({ article_id, votes }) {
         {currentVote}
         <button
           onClick={handleDownvote}
-          className="upvote-icon"
+          className="vote-icon downvote-icon"
           disabled={hasClickedDown}
         >
           ⬇
