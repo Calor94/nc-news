@@ -25,6 +25,22 @@
 .article {
   margin: 20px;
 }
+
+.upvote-icon {
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+.upvote-icon:first-of-type {
+  margin: 0 10px;
+}
+
+.upvote-icon:last-of-type {
+  margin-left: 10px;
+}
+
 img {
   width: 50%;
   margin: 0 auto;

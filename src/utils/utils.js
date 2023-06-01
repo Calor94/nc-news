@@ -24,3 +24,10 @@ export const getComments = async (article_id) => {
     return data;
   } catch (error) {}
 };
+
+export const updateVote = async (article_id, num) => {
+  const { data } = await api.patch(`/articles/${article_id}`, {
+    inc_votes: num,
+  });
+  return data;
+};
