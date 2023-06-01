@@ -1,6 +1,7 @@
 import { getArticles } from "../utils/utils";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Upvote from "./Upvote";
 
 export default function ArticleCard() {
   const [articles, setArticles] = useState([]);
@@ -28,7 +29,7 @@ export default function ArticleCard() {
               </Link>
             </h2>
             <img src={article.article_img_url} alt=" " />
-            <p>votes: {article.votes}</p>
+            <Upvote article_id={article.article_id} votes={article.votes} />
             <p>comments: {article.comment_count}</p>
           </li>
         );

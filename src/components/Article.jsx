@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../utils/utils";
 import CommentsCard from "./CommentsCard";
+import Upvote from "./Upvote";
 
 export default function Article() {
   const [article, setArticle] = useState([]);
@@ -9,7 +10,7 @@ export default function Article() {
   const { article_id } = useParams();
 
   useEffect(() => {
-    getArticle(article_id).then((article) => {
+    getArticle(article_id, 1).then((article) => {
       setArticle(article);
       setIsLoading(false);
     });
@@ -27,7 +28,7 @@ export default function Article() {
       <img src={article.article_img_url} alt=" " />
       <p>{article.body}</p>
       <p>created on {article.created_at}</p>
-      <p>votes: {article.votes}</p>
+      <Upvote article_id={article_id} votes={article.votes} />
       <section>
         <CommentsCard />
       </section>
