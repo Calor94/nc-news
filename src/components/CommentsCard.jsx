@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../utils/utils";
 
-export default function CommentsCard() {
-  const [comments, setComments] = useState([]);
+export default function CommentsCard({ comments, setComments }) {
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
-
   useEffect(() => {
     getComments(article_id).then((comments) => {
       setComments(comments);
@@ -28,7 +26,7 @@ export default function CommentsCard() {
         return (
           <li key={comment.comment_id}>
             <p>Written by: {comment.author}</p>
-            <p>{comment.created_at}</p>
+            <p>{new Date(comment.created_at).toLocaleDateString()}</p>
             <p>{comment.body}</p>
             <p>Votes: {comment.votes}</p>
           </li>

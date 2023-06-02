@@ -5,29 +5,28 @@ const api = axios.create({
 });
 
 export const getArticles = async () => {
-  try {
-    const { data } = await api.get("/articles");
-    return data;
-  } catch (error) {}
+  const { data } = await api.get("/articles");
+  return data;
 };
 
 export const getArticle = async (article_id) => {
-  try {
-    const { data } = await api.get(`/articles/${article_id}`);
-    return data;
-  } catch (error) {}
+  const { data } = await api.get(`/articles/${article_id}`);
+  return data;
 };
 
 export const getComments = async (article_id) => {
-  try {
-    const { data } = await api.get(`/articles/${article_id}/comments`);
-    return data;
-  } catch (error) {}
+  const { data } = await api.get(`/articles/${article_id}/comments`);
+  return data;
 };
 
 export const updateVote = async (article_id, num) => {
   const { data } = await api.patch(`/articles/${article_id}`, {
     inc_votes: num,
   });
+  return data;
+};
+
+export const addComment = async (article_id, comment) => {
+  const { data } = await api.post(`/articles/${article_id}/comments`, comment);
   return data;
 };
