@@ -29,9 +29,7 @@ export default function PostComment({ article_id, setComments, comments }) {
       votes: 0,
       comment_id: comments.length + 1,
     };
-    if (usernameValue && bodyValue) {
-      setComments((currComments) => [newComment, ...currComments]);
-    }
+    setComments((currComments) => [newComment, ...currComments]);
     addComment(article_id, { username: usernameValue, body: bodyValue }).catch(
       () => {
         setComments((currComments) => currComments);
@@ -51,6 +49,7 @@ export default function PostComment({ article_id, setComments, comments }) {
               id="username"
               defaultValue="Select user"
               onChange={handleSelect}
+              required
             >
               <option value="Select user" disabled>
                 Select user
@@ -63,7 +62,7 @@ export default function PostComment({ article_id, setComments, comments }) {
               <option value="jessjelly">jessjelly</option>
             </select>
             <label htmlFor="body">Comment:</label>
-            <textarea id="body" onChange={handleBody} />
+            <textarea id="body" onChange={handleBody} required />
             <button className="submit-btn">Submit</button>
           </form>
         </section>
