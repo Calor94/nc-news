@@ -29,7 +29,9 @@ export default function PostComment({ article_id, setComments, comments }) {
       votes: 0,
       comment_id: comments.length + 1,
     };
-    setComments((currComments) => [newComment, ...currComments]);
+    if (usernameValue && bodyValue) {
+      setComments((currComments) => [newComment, ...currComments]);
+    }
     addComment(article_id, { username: usernameValue, body: bodyValue }).catch(
       () => {
         setComments((currComments) => currComments);
