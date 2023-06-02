@@ -83,6 +83,10 @@
   margin-top: 15px;
 }
 
+.topic-h2 {
+  cursor: pointer;
+}
+
 img {
   width: 50%;
   margin: 0 auto;
