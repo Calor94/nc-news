@@ -23,6 +23,7 @@ export default function Topics() {
 
   return (
     <>
+      <h2>This page is under development...</h2>
       <ul>
         {topics.map((topic) => {
           return (
