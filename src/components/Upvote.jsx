@@ -12,9 +12,6 @@ export default function Upvote({ article_id, votes }) {
     setHasClickedUp(true);
     setHasClickedDown(false);
     setIsError(false);
-    // updateVote(article_id, 1).then((data) => {
-    //   return data;
-    // });
     updateVote(article_id, 1).catch(() => {
       setCurrentVote((currVote) => currVote - 1);
       setIsError(true);
@@ -25,9 +22,6 @@ export default function Upvote({ article_id, votes }) {
     setHasClickedUp(false);
     setHasClickedDown(true);
     setIsError(false);
-    // updateVote(article_id, -1).then((data) => {
-    //   return data;
-    // });
     updateVote(article_id, -1).catch(() => {
       setCurrentVote((currVote) => currVote + 1);
       setIsError(true);

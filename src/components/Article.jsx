@@ -3,14 +3,17 @@ import { useParams } from "react-router-dom";
 import { getArticle } from "../utils/utils";
 import CommentsCard from "./CommentsCard";
 import Upvote from "./Upvote";
+import PostComment from "./PostComment";
 
 export default function Article() {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [comments, setComments] = useState([]);
+
   const { article_id } = useParams();
 
   useEffect(() => {
-    getArticle(article_id, 1).then((article) => {
+    getArticle(article_id).then((article) => {
       setArticle(article);
       setIsLoading(false);
     });
@@ -29,8 +32,13 @@ export default function Article() {
       <p>{article.body}</p>
       <p>created on {article.created_at}</p>
       <Upvote article_id={article_id} votes={article.votes} />
+      <PostComment
+        article_id={article_id}
+        comments={comments}
+        setComments={setComments}
+      />
       <section>
-        <CommentsCard />
+        <CommentsCard comments={comments} setComments={setComments} />
       </section>
     </article>
   );
