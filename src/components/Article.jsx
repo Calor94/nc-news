@@ -30,7 +30,7 @@ export default function Article() {
       <p>Written by: {article.author}</p>
       <img src={article.article_img_url} alt=" " />
       <p>{article.body}</p>
-      <p>created on {article.created_at}</p>
+      <p>created on {new Date(article.created_at).toLocaleDateString()}</p>
       <Upvote article_id={article_id} votes={article.votes} />
       <PostComment
         article_id={article_id}
